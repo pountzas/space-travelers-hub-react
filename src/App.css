@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App-logo {
+  width: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.selected {
+  border-bottom: 1px solid black;
+}
+
+.nav-class {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
