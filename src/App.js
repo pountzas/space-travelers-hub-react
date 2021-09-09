@@ -1,23 +1,26 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
+import Mission from './components/Mission';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Router>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        {/* <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div> */}
         <Navbar />
         <Switch>
           <Route exact path="/" />
-          <Route path="/missions" />
+          <Route path="/missions" component={Mission} />
           <Route path="/profile" />
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
 

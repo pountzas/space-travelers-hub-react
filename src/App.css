@@ -5,7 +5,7 @@
 }
 
 .App-logo {
-  width: 100px;
+  width: 50px;
 }
 
 a {
@@ -20,4 +20,17 @@ a {
   display: flex;
   gap: 10px;
   margin-right: 20px;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
 }
