@@ -2,18 +2,18 @@ const UPDATE_MISSIONS = 'space-travelers-hub-react/missions/UPDATE_MISSIONS';
 
 const initialState = [];
 
-export const updateMission = payload => ({
+export const updateMission = (payload) => ({
   type: UPDATE_MISSIONS,
-  payload
-})
+  payload,
+});
 
-const missionReducer =  (state = initialState, action) => {
+const missionReducer = (state = initialState, action) => {
   switch (action.type) {
-      case UPDATE_MISSIONS:
-          return action.payload;
-      default:
-          return state;
-      }
-  };
-  
-  export default missionReducer;
+    case UPDATE_MISSIONS:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default missionReducer;
