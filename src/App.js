@@ -9,22 +9,37 @@ import Missions from './components/missions/missions';
 import Profile from './components/profile/profile';
 import getRockets from './redux/slices/rocketsSlice';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(async () => {
+    await dispatch(getRockets());
+  });
+
   return (
     <div className="App">
       <Router>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div className="logo-container">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1>Space Traveler&apos;s Hub</h1>
+          </div>
+          <Navbar />
         </header>
-        <Navbar />
         <Switch>
-          <Route exact path="/" />
-          <Route path="/missions" />
-          <Route path="/profile" />
+          <Route exact path="/">
+            <Rockets />
+          </Route>
+          <Route path="/missions">
+            <Missions />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
         </Switch>
       </Router>
     </div>
   );
-}
+};
 
 export default App;
