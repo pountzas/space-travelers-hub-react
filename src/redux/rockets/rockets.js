@@ -10,3 +10,9 @@ const initialState = {
   rockets: [],
 };
 
+// Action Creators
+
+export const toggleReserveRocket = (payload) => ({
+  type: TOGGLE_RESERVE_ROCKET,
+  payload,
+});
