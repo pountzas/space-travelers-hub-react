@@ -1,22 +1,13 @@
-const Mission = () => {
-  const Missions = [
-    {
-      mission: 'Thaicom',
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    },
-    {
-      mission: 'Thaicom',
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    },
-    {
-      mission: 'Thaicom',
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    },
-    {
-      mission: 'Thaicom',
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    },
-  ];
+import { React, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMissions } from '../redux/missions/missions';
+
+const missionComp = () => {
+  const dispatch = useDispatch();
+  const Mission = useSelector((state) => state.missions);
+  useEffect(() => {
+    dispatch(getMissions());
+  }, []);
   return (
     <div>
       <table>
@@ -29,12 +20,12 @@ const Mission = () => {
           </tr>
         </thead>
         <tbody>
-          {Missions.map((mission) => (
-            <tr key={mission.id}>
+          {Mission.map((mission) => (
+            <tr key={mission.missionId}>
               <td>
-                {mission.mission}
+                {mission.missionName}
               </td>
-              <td>{mission.description}</td>
+              <td>{mission.missionDescription}</td>
               <td><button type="button">Not a member</button></td>
               <td><button type="button">Join Mission</button></td>
 
@@ -47,4 +38,4 @@ const Mission = () => {
     </div>
   );
 };
-export default Mission;
+export default missionComp;

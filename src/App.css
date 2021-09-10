@@ -1,7 +1,11 @@
-.App {
+.App-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #ccc;
+  margin: 0 40px;
+  padding: 20px;
+  font-size: 20px;
 }
 
 .App-logo {
@@ -10,16 +14,95 @@
 
 a {
   text-decoration: none;
+  color: #007bff;
 }
 
 .selected {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #007bff;
 }
 
 .nav-class {
   display: flex;
   gap: 10px;
-  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.rocket-container {
+  display: flex;
+  margin: 0 50px;
+}
+
+.rocket-image {
+  margin: 10px;
+  width: 350px;
+}
+
+.rocket-right-panel {
+  width: 100%;
+}
+
+.rocket-title {
+  font-weight: bold;
+}
+
+.rocket-description {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.reserved-notification {
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 5px;
+  background-color: #18a2b8;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #18a2b8;
+}
+
+.rocket-cancel {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #6d757d;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #6d757d;
+}
+
+.rocket-reserve {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+}
+
+/* ------------- Profile ------------- */
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.profile-container > div {
+  width: 40%;
+}
+
+.reserved-column {
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+}
+
+.reserved-item {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 20px 0 40px 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.reserved-item:nth-last-child(1) {
+  border: none;
 }
 
 table {

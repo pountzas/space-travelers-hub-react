@@ -1,6 +1,8 @@
-import SpaceX from "../../utils/api";
+import spaceX from '../../utils/api';
 
 const UPDATE_MISSIONS = 'space-travelers-hub-react/missions/UPDATE_MISSIONS';
+// const JOIN_MISSION = "space-travelers-hub-react/missions/JOIN_MISSION"
+// const LEAVE_MISSION = "space-travelers-hub-react/missions/LEAVE_MISSION"
 
 const initialState = [];
 
@@ -16,6 +18,19 @@ const missionReducer = (state = initialState, action) => {
     default:
       return state;
   }
+};
+
+export const getMissions = () => (dispatch) => {
+  spaceX.getAllMissions().then((response) => {
+    dispatch(updateMission(
+      response.map((mission) => ({
+        missonId: mission.mission_id,
+        missionName: mission.mission_name,
+        missionDescription: mission.description,
+      })),
+
+    ));
+  });
 };
 
 export default missionReducer;

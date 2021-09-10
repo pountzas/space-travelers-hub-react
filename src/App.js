@@ -4,24 +4,22 @@ import Navbar from './components/Navbar';
 import Mission from './components/Mission';
 import './App.css';
 
-function App() {
-  return (
-    <>
-      <Router>
-        {/* <div className="App">
+const App = () => (
+  <>
+    <Router>
+      {/* <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
           </header>
         </div> */}
-        <Navbar />
-        <Switch>
-          <Route exact path="/" />
-          <Route path="/missions" component={Mission} />
-          <Route path="/profile" />
-        </Switch>
-      </Router>
-    </>
-  );
-}
+      <Navbar />
+      <Switch>
+        <Route exact path="/" />
+        <Route path="/missions" component={Mission} />
+        <Route path="/profile" />
+      </Switch>
+    </Router>
+  </>
+);
 
 export default App;
