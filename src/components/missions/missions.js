@@ -1,18 +1,23 @@
-import { React, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getMissions, joinMission } from '../../redux/missions/missions';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import getMissions from '../../redux/slices/missionsSlice';
+import { toggleMission } from '../../redux/missions/missions';
 
 const MissionComp = () => {
   const dispatch = useDispatch();
-  const Mission = useSelector((state) => state.missions);
-  useEffect(() => {
-    dispatch(getMissions());
+
+  const Mission = useSelector((state) => state.missionReducer.missions);
+
+  useEffect(async () => {
+    if (!Mission.length) {
+      await dispatch(getMissions());
+    }
   }, []);
 
-  const joinMissionEvent = () => {
-    dispatch(joinMission());
+  const toggleMissionEvent = (e) => {
+    const missionID = e.target.parentNode.parentNode.id;
+    dispatch(toggleMission(missionID));
   };
-
   return (
     <div>
       <table>
@@ -26,21 +31,25 @@ const MissionComp = () => {
         </thead>
         <tbody>
           {Mission.map((mission) => (
-            <tr key={mission.missionId}>
+            <tr key={mission.mission_id} id={mission.mission_id}>
               <td>
-                {mission.missionName}
+                {mission.mission_name}
               </td>
-              <td>{mission.missionDescription}</td>
+              <td>{mission.description}</td>
 
-              <td>
-                {mission.reserved
-                  ? <button type="button" onClick={joinMissionEvent}>Leave Mission</button>
-                  : <button type="button" onClick={joinMissionEvent}>Join Mission</button>}
+              <td className="mission-reserve">
+                {
+          mission.reserved
+            ? <span className="active-member">Active Member</span>
+            : <span className="inactive-member">NOT A MEMBER</span>
+        }
               </td>
-              <td>
-                {mission.reserved
-                  ? <button type="button">Active member</button>
-                  : <p type="button">Not a member</p>}
+              <td className="mission-btn">
+                {
+          mission.reserved
+            ? <button type="button" className="leave-btn" onClick={toggleMissionEvent}>Leave Mission</button>
+            : <button type="button" className="join-btn" onClick={toggleMissionEvent}>Join Mission</button>
+        }
               </td>
             </tr>
           ))}
