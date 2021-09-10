@@ -34,13 +34,13 @@ const missionComp = () => {
 
               <td>
                 {mission.reserved
-                  ? <button type="button" onClick={joinMissionEvent}>Join Mission</button>
-                  : <button type="button" onClick={joinMissionEvent}>Leave Mission</button>}
+                  ? <button type="button" onClick={joinMissionEvent}>Leave Mission</button>
+                  : <button type="button" onClick={joinMissionEvent}>Join Mission</button>}
               </td>
               <td>
                 {mission.reserved
-                  ? <button type="button" onClick={joinMissionEvent}>Active member</button>
-                  : <button type="button" onClick={joinMissionEvent}>Not a member</button>}
+                  ? <button type="button">Active member</button>
+                  : <button type="button">Not a member</button>}
               </td>
 
             </tr>
