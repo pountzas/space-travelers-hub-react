@@ -40,9 +40,8 @@ const MissionComp = () => {
               <td>
                 {mission.reserved
                   ? <button type="button">Active member</button>
-                  : <button type="button">Not a member</button>}
+                  : <p type="button">Not a member</p>}
               </td>
-
             </tr>
           ))}
 
