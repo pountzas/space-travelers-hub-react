@@ -116,3 +116,16 @@ a {
 .reserved-item:nth-last-child(1) {
   border: none;
 }
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}

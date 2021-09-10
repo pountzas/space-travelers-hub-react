@@ -5,7 +5,7 @@ import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
 import Rockets from './components/rockets/rockets';
-import Missions from './components/missions/missions';
+import MissionComp from './components/missions/missions';
 import Profile from './components/profile/profile';
 import getRockets from './redux/slices/rocketsSlice';
 
@@ -31,7 +31,7 @@ const App = () => {
             <Rockets />
           </Route>
           <Route path="/missions">
-            <Missions />
+            <MissionComp />
           </Route>
           <Route path="/profile">
             <Profile />
