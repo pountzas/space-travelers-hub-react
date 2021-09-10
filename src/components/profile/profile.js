@@ -12,11 +12,11 @@ const Profile = () => {
     <div className="profile-container">
       <div className="missions-column">
         <h2>My Missions</h2>
-        <ul>
+        <div className="reserved-column">
           {reservedMissions.map((mission) => (
-            <li key={mission.mission_id}>{mission.mission_name}</li>
+            <div key={mission.mission_id} className="reserved-item">{mission.mission_name}</div>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="rockets-column">
         <h2>My Rockets</h2>
