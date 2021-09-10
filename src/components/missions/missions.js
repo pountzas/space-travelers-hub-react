@@ -35,7 +35,7 @@ const MissionComp = () => {
               <td>
                 {mission.mission_name}
               </td>
-              <td>{mission.description}</td>
+              <td className="description">{mission.description}</td>
 
               <td className="mission-reserve">
                 {
