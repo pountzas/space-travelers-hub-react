@@ -18,6 +18,11 @@
 <img width="763" alt="Leaderboard image" src="https://user-images.githubusercontent.com/58818795/132796737-9c16e670-90fb-4ca7-b7ca-98a409277a8d.png">
 
 
+## Video
+
+https://www.loom.com/share/86eeb7da0f744395a46ad417c81dad49
+
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
