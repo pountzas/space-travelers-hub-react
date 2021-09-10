@@ -7,3 +7,26 @@ describe('test initial state', () => {
     });
   });
 });
+
+describe('test toggle reserved action', () => {
+  test('should return the rockets with reverted reserved value', () => {
+    const initialRocketState = {
+      rockets: [
+        {
+          id: 1,
+          reserved: true,
+        },
+      ],
+    };
+    expect(rocketsReducer(initialRocketState, toggleReserveRocket(1))).toEqual(
+      {
+        rockets: [
+          {
+            id: 1,
+            reserved: false,
+          },
+        ],
+      },
+    );
+  });
+});
